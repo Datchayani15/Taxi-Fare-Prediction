@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Fare Prediction</title>
+
+    <!-- Leaflet (Map) -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h2>Taxi Fare Prediction</h2>
+
+    <div class="input-row">
+
+    <div class="input-group">
+        <label for="pickup">Pickup Location:</label>
+        <input type="text" id="pickup" placeholder="Enter Pickup">
+    </div>
+
+    <div class="input-group">
+        <label for="drop">Drop Location:</label>
+        <input type="text" id="drop" placeholder="Enter Drop">
+    </div>
+
+</div>
+
+
+    <select id="rideType">
+        <option value="economy">Economy</option>
+        <option value="standard">Standard</option>
+        <option value="premium">Premium</option>
+    </select>
+
+    <input type="number" id="passengers" min="1" max="6" value="1">
+    <button onclick="calculateFare()">Calculate Fare</button>
+
+    <div id="map"></div>
+
+    <h3>Ride Summary</h3>
+    <div id="rideSummary">
+        <p><b>Pickup:</b> <span id="pickupAddress"></span></p>
+        <p><b>Drop:</b> <span id="dropAddress"></span></p>
+        <p><b>Distance:</b> <span id="distance"></span> km</p>
+        <p><b>Ride Type:</b> <span id="selectedRideType"></span></p>
+        <p><b>Passengers:</b> <span id="numPassengers"></span></p>
+        <p><b>Base Fare:</b> ₹50</p>
+        <p><b>Distance Fare:</b> ₹<span id="distanceFare"></span></p>
+        <p><b>Passenger Fare:</b> ₹<span id="passengerFare"></span></p>
+        <p><b>Total Fare:</b> ₹<span id="fare"></span></p>
+    </div>
+
+    <h3>Ride History</h3>
+    <table id="historyTable">
+        <tr>
+            <th>Pickup</th>
+            <th>Drop</th>
+            <th>Distance (km)</th>
+            <th>Fare (₹)</th>
+        </tr>
+    </table>
+
+    <h3>Fare Trend</h3>
+    <div id="chartContainer">
+        <canvas id="fareChart"></canvas>
+    </div>
+
+    <!-- JS File -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

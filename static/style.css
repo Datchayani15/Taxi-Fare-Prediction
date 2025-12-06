@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #007bff, #00c853);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+input, select, button {
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+button {
+    background: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffa000;
+}
+
+#map {
+    height: 400px;
+    width: 68%;
+    margin: auto;
+    border-radius: 15px;
+}
+
+#rideSummary {
+    width: 60%;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 15px;
+    text-align: left;
+    border-left: 5px solid #ffcc00;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#historyTable {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    background: #ffcc00;
+    color: black;
+}
+
+#chartContainer {
+    width: 60%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+canvas {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.suggestions {
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    max-width: 300px;
+    margin-top: -5px;
+    text-align: left;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1000;
+}
+
+.suggestions div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestions div:hover {
+    background: #f0f0f0;
+}
+
+/* ---------- FIXED PART BELOW ---------- */
+
+.input-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;   /* space between pickup & drop */
+    margin: 10px 0;
+}
+
+.input-group {
+    display: flex;              /* row layout */
+    align-items: center;        /* center vertically */
+    gap: 10px;                  /* space between label & input */
+}
+
+.input-group label {
+    font-weight: bold;
+    white-space: nowrap;
+    color: #fff;
+}
